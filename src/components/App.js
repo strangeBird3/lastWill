@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import Nav from './Nav.js';
 import Home from './Home.js';
@@ -15,7 +15,7 @@ class App extends React.Component {
 		return(
 		<div>
 			<Nav />
-			<Route path="/Home" component={Home}/>
+			<Route exact path="/" component={Home}/>
           	<Route path="/Didyouknow" component={Didyouknow}/>
           	<Route path="/Whattodo" component={Whattodo}/>
           	<Route path="/About" component={About}/>

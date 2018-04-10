@@ -1,4 +1,5 @@
 $font-stack: Courier New, sans-serif;
+$primary-color: white;
 
 // Home Page
 
@@ -10,14 +11,40 @@ $font-stack: Courier New, sans-serif;
 
 .landingText
 	color: #366cd0;
-	font-family: $font-stack;
 	margin-top: 5em;
+	margin-left: 6em;
+
+	h1
+		font-family: $font-stack;
+
+.homeContent
+	margin-top: 1em;
+	text-align: center;
+
+.homeFirst
+	margin-left: 2em;
+	margin-right: 2em;
+
+	h2
+		font-family: $font-stack;
+
+// What to do? page
+.whatContent
 	
+	ul
+		li
+			padding-top: 2em;
+
 
 // PureCSS menu template
 
+
+.pure-menu-list
+	font-family: $font-stack;
+	font-weight: bold;
+
 .custom-wrapper
-	background-color: #ffd390;
+	background-color: $primary-color;
 	margin-bottom: 1em;
 	-webkit-font-smoothing: antialiased;
 	height: 2.1em;
