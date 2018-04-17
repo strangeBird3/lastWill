@@ -126,10 +126,93 @@ $grey-color: #777; // grey
 
 // What to do? page
 .whatContent
-	
-	ul
+	margin-top: 2em;
+	text-align: justify;
+	line-height: 22px;
+
+	ul 
+		list-style: none;
 		li
 			padding-top: 2em;
+		ol
+			list-style: none;
+
+.whatFirst
+	@media screen and (min-width: 48em)
+		margin-left: 10em;
+		margin-right: 10em;
+
+	margin-left: 2em;
+	margin-right: 2em;
+
+	h2
+		font-family: $font-stack;
+		color: $font-color;
+
+.highlighterBlue
+	color: $font-color;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: $font-stack;
+
+.highlighterGrey
+	color: $grey-color;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: $font-stack;
+
+//Did you know? page
+
+.didyouknow
+	h3
+		text-align: center;
+
+	margin-top: 1em;
+
+.know1
+	@media screen and (min-width: 48em)
+		margin-left: 2em;
+		margin-right: 2em;
+
+	margin-left: 1em;
+	margin-right: 1em;
+
+	h3
+		font-family: $font-stack;
+		color: $font-color;
+	ol
+		li 
+			padding-top: 1em;
+			text-align: left;
+
+.know2
+	@media screen and (min-width: 48em)
+		margin-left: 2em;
+		margin-right: 2em;
+
+	margin-left: 1em;
+	margin-right: 1em;
+
+	h3
+		font-family: $font-stack;
+		color: $font-color;
+	ol
+		li 
+			padding-top: 1em;
+			text-align: left;
+
+
+.know3
+	@media screen and (min-width: 48em)
+		margin-left: 2em;
+		margin-right: 2em;
+
+	margin-left: 2em;
+	margin-right: 2em;
+
+	h3
+		font-family: $font-stack;
+		color: $font-color;
 
 
 // PureCSS menu template
