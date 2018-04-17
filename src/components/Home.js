@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import styles from '../index.sass';
+import { Link } from 'react-router-dom';
 
 class Home extends React.PureComponent {
 	render() {
 		return(
 		<div className="home">
 			<div className="landing">
-				<div className="pure-u-1 pure-u-sm-1-5"></div>
-				<div className="pure-u-1 pure-u-sm-3-5">
+				<div className="pure-u-1 pure-u-md-1-5"></div>
+				<div className="pure-u-1 pure-u-md-3-5">
 					<div className="landingText">
 						<h1>This Should Help</h1>
 						<h3>This could be the most important piece of mind you can give to your family</h3>
 					</div>
 				</div>
-				<div className="pure-u-1 pure-u-sm-1-5"></div>
+				<div className="pure-u-1 pure-u-md-1-5"></div>
 			</div>
-			<div className="pure-u-1 pure-u-sm-1-1 homeContent">
+			<div className="pure-u-1 pure-u-md-2-3 homeContent">
 				<div className="homeFirst">
 					<h2> Personal Tragedy </h2>
 					<p>If your time on this Earth came to an unexpected abrupt end, would your family members 
@@ -38,6 +39,18 @@ class Home extends React.PureComponent {
 					report after you have answered all of the questions), in the event of your untimely 
 					demise, we will generate a hard copy of this report & send it to the beneficiary 
 					(or beneficiaries) of your choosing (said person (or persons) must be of the age of 18 or older). </p>
+				</div>
+			</div>
+			<div className="pure-u-1 pure-u-md-1-3 privacy">
+				<div className="privacyFirst">
+					<h2> Privacy Policy </h2>
+					<p>This Should Help, LLC Privacy Statement: <br />
+					This Should Help, LLC is committed to protecting your privacy 
+					and ensuring you have a positive experience with our company. 
+					This policy outlines our personal information handling practices 
+					for both online and offline data. Any personal information given 
+					to us will be treated according to this policy.</p>
+					<Link to="/Privacy" className="pure-menu-link">Learn More</Link>
 				</div>
 			</div>
 		</div>

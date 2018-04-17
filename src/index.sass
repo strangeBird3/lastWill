@@ -1,32 +1,128 @@
 $font-stack: Courier New, sans-serif;
+$font-color: #366cd0;
 $primary-color: white;
+$grey-color: #777; // grey
+
 
 // Home Page
 
 .landing
+
 	background-image: url(./public/img/ladderHeaven2.jpg);
-	height: 25em;
+	height: 18em;
 	background-size: cover;
 
 
 .landingText
-	color: #366cd0;
-	margin-top: 5em;
+	@media screen and (min-width: 48em)
+		margin-top: 5em;
+		margin-left: 6em;
+
+	color: $font-color;
+	margin-top: 2em;
 	margin-left: 6em;
+
+
 
 	h1
 		font-family: $font-stack;
 
 .homeContent
 	margin-top: 1em;
-	text-align: center;
+	text-align: justify;
 
 .homeFirst
+	@media screen and (min-width: 48em)
+		margin-left: 8em;
+		margin-right: 8em;
+
 	margin-left: 2em;
 	margin-right: 2em;
 
 	h2
 		font-family: $font-stack;
+		color: $font-color;
+
+	p
+		line-height: 22px;
+
+.privacy
+	margin-top: 1em;
+	text-align: justify;
+
+
+.privacyFirst
+	
+
+	@media screen and (min-width: 48em)
+		margin-left: -4em;
+		margin-right: 4em;
+		padding-left: 4em;
+		border-left: 3px dashed $grey-color;
+
+	margin-left: 2em;
+	margin-right: 2em;
+
+	h2
+		font-family: $font-stack;
+		color: $font-color;
+	p
+		line-height: 22px;
+
+// About Us Page
+
+.aboutContent
+	margin-top: 1em;
+	text-align: justify;
+
+.aboutFirst
+	@media screen and (min-width: 48em)
+		margin-left: 8em;
+		margin-right: 8em;
+
+	margin-left: 2em;
+	margin-right: 2em;
+
+	h2
+		font-family: $font-stack;
+		color: $font-color;
+
+	p
+		line-height: 22px;
+
+.major
+	margin-top: 1em;
+	text-align: justify;
+
+
+.majorFirst
+	
+
+	@media screen and (min-width: 48em)
+		margin-left: -4em;
+		margin-right: 4em;
+		padding-left: 4em;
+		border-left: 3px dashed $grey-color;
+
+	margin-left: 2em;
+	margin-right: 2em;
+	text-align: center;
+
+	h2
+		font-family: $font-stack;
+		color: $font-color;
+
+	img 
+    	border-radius: 5px;
+    	border-color: black;
+    	border-width: 2px;
+    	border-style: solid;
+
+	p
+		line-height: 22px;
+		font-size: 12px;
+		margin-right: 2em;
+		margin-left: 2em;
 
 // What to do? page
 .whatContent
@@ -73,7 +169,7 @@ $primary-color: white;
 
 
 .custom-toggle .bar 
-	background-color: #777;
+	background-color: $grey-color;
 	display: block;
 	width: 20px;
 	height: 2px;
