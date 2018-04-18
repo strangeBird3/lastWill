@@ -40,7 +40,7 @@ class Nav extends React.PureComponent {
         toggleMenu()
       }
     }
-    
+
   /*document.getElementById('toggle').addEventListener('click', function (e) {
     toggleMenu()
     e.preventDefault()
@@ -54,7 +54,9 @@ class Nav extends React.PureComponent {
 		<div className="custom-wrapper  pure-g" id="menu">
 			     <div className="pure-u-1 pure-u-md-1-4">
               <div className="pure-menu">
-                  <a href="#" className="pure-menu-heading custom-brand">Logo</a>
+                  <a href="#" className="pure-menu-heading custom-brand">
+                    <img className="pure-img-responsive" src="./src/public/img/safe-locker.svg" alt="logo" />
+                  </a>
                   <a href="#" className="custom-toggle" id="toggle" onClick={this.toggle}><s className="bar"></s><s className="bar"></s></a>
               </div>
           	</div>
