@@ -2,16 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.jsx',
 	output: {
-		path: path.join(__dirname, '/dist'),
-		filename: 'index_bundle.js',
-		publicPath: '/'
+		path: path.join(__dirname +  '/src/public'),
+		publicPath: '/',
+		filename: 'bundle.js'
 	},
+	mode: 'development',
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: [{
 					loader: 'babel-loader'
@@ -36,19 +37,18 @@ module.exports = {
 	            }]
 			},
 			{
-        		test: /\.(png|jpg|gif)$/,
+        		test: /\.(png|jpg|gif|svg)$/,
         		use: [{
-			        loader: 'url-loader',        
+			        loader: 'file-loader',        
 			  	}]
 			}
 		]
 	},
-	devServer: {
-		historyApiFallback: true,
-	},
+	devtool: 'inline-source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/index.html'
 		})
-	]
-}
+	],
+	// watch: true
+};

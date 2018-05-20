@@ -1,0 +1,27 @@
+2018-05-17 11:20:45.092 EDT [57286] LOG:  listening on IPv6 address "::1", port 5432
+2018-05-17 11:20:45.092 EDT [57286] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-05-17 11:20:45.093 EDT [57286] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-05-17 11:20:45.109 EDT [57287] LOG:  database system was shut down at 2018-05-17 11:14:49 EDT
+2018-05-17 11:20:45.114 EDT [57286] LOG:  database system is ready to accept connections
+2018-05-19 22:10:24.909 EDT [62991] ERROR:  syntax error at or near "SELECT" at character 21
+2018-05-19 22:10:24.909 EDT [62991] STATEMENT:  SELECT current_date
+	SELECT current_date;
+2018-05-19 22:10:35.740 EDT [62991] ERROR:  syntax error at or near "SELECT" at character 21
+2018-05-19 22:10:35.740 EDT [62991] STATEMENT:  SELECT current_date
+	SELECT current_date;
+2018-05-19 22:17:13.677 EDT [63084] FATAL:  database "prideless" does not exist
+2018-05-19 22:40:45.504 EDT [62991] ERROR:  syntax error at or near "CREATE" at character 6
+2018-05-19 22:40:45.504 EDT [62991] STATEMENT:  SHOW
+	CREATE DATABASE
+	SHOW;
+2018-05-19 22:40:50.757 EDT [62991] ERROR:  syntax error at or near ";" at character 5
+2018-05-19 22:40:50.757 EDT [62991] STATEMENT:  SHOW;
+2018-05-19 22:40:57.155 EDT [62991] ERROR:  syntax error at or near ";" at character 16
+2018-05-19 22:40:57.155 EDT [62991] STATEMENT:  CREATE DATABASE;
+2018-05-19 22:42:14.836 EDT [63322] FATAL:  database "prideless" does not exist
+2018-05-19 22:52:31.892 EDT [63437] ERROR:  SELECT * with no tables specified is not valid at character 8
+2018-05-19 22:52:31.892 EDT [63437] STATEMENT:  SELECT *
+2018-05-19 22:52:41.540 EDT [63442] ERROR:  SELECT * with no tables specified is not valid at character 8
+2018-05-19 22:52:41.540 EDT [63442] STATEMENT:  SELECT *
+2018-05-19 22:53:29.660 EDT [63453] ERROR:  bind message supplies 1 parameters, but prepared statement "" requires 0
+2018-05-19 22:53:29.660 EDT [63453] STATEMENT:  SELECT NOW()
