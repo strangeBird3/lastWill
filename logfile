@@ -25,3 +25,51 @@
 2018-05-19 22:52:41.540 EDT [63442] STATEMENT:  SELECT *
 2018-05-19 22:53:29.660 EDT [63453] ERROR:  bind message supplies 1 parameters, but prepared statement "" requires 0
 2018-05-19 22:53:29.660 EDT [63453] STATEMENT:  SELECT NOW()
+2018-05-20 18:13:31.312 EDT [64376] FATAL:  database "prideless" does not exist
+2018-05-25 20:08:14.382 EDT [73747] FATAL:  database "prideless" does not exist
+2018-05-25 20:29:33.965 EDT [73954] ERROR:  relation "session" already exists
+2018-05-25 20:29:33.965 EDT [73954] STATEMENT:  CREATE TABLE "session" (
+		"sid" varchar NOT NULL COLLATE "default",
+		"sess" json NOT NULL,
+		"expire" timestamp(6) NOT NULL
+	)
+	WITH (OIDS=FALSE);
+2018-05-25 20:29:33.966 EDT [73954] ERROR:  multiple primary keys for table "session" are not allowed
+2018-05-25 20:29:33.966 EDT [73954] STATEMENT:  ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+2018-05-25 20:29:33.970 EDT [73954] ERROR:  relation "users" already exists
+2018-05-25 20:29:33.970 EDT [73954] STATEMENT:  CREATE TABLE "users" (
+		"id" bigserial PRIMARY KEY,
+		"username" varchar(255) UNIQUE,
+		"password" varchar(100),
+		"type" varchar(50)
+	);
+2018-05-27 16:00:04.664 EDT [77833] FATAL:  database "prideless" does not exist
+2018-05-27 18:30:06.147 EDT [79261] FATAL:  database "passport_local_knex" does not exist
+2018-05-27 18:30:06.149 EDT [79262] FATAL:  database "passport_local_knex" does not exist
+2018-05-27 18:33:22.729 EDT [79323] FATAL:  role "DATABASE" does not exist
+2018-05-27 18:33:29.774 EDT [79326] FATAL:  role "DATABASE" does not exist
+2018-05-27 18:33:32.293 EDT [79329] FATAL:  database "prideless" does not exist
+2018-05-27 18:33:45.573 EDT [79332] FATAL:  database "passport_local_knex" does not exist
+2018-05-27 18:34:37.329 EDT [79341] FATAL:  role "DATABASE" does not exist
+2018-05-27 18:35:20.755 EDT [79348] FATAL:  role "DATABASE" does not exist
+2018-06-01 20:13:31.392 EDT [89062] FATAL:  database "postgresql" does not exist
+2018-06-01 20:13:37.554 EDT [89065] FATAL:  database "postgre" does not exist
+2018-06-01 20:13:46.705 EDT [89069] FATAL:  database "prideless" does not exist
+2018-06-01 20:13:54.493 EDT [89073] FATAL:  database "d" does not exist
+2018-06-01 20:13:58.137 EDT [89075] FATAL:  database "dt" does not exist
+2018-06-01 20:17:09.701 EDT [89117] FATAL:  database "prideless" does not exist
+2018-06-01 20:25:45.617 EDT [89254] FATAL:  database "prideless" does not exist
+2018-06-01 20:31:38.627 EDT [89331] ERROR:  relation "users" already exists
+2018-06-01 20:31:38.627 EDT [89331] STATEMENT:  create table "users" ("id" serial primary key, "username" varchar(255) not null, "password" varchar(255) not null, "admin" boolean not null default '0', "created_at" timestamptz not null default now())
+2018-06-01 20:31:38.634 EDT [89331] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2018-06-01 20:31:38.634 EDT [89331] STATEMENT:  update "knex_migrations_lock" set "is_locked" = $1
+2018-06-01 21:08:23.511 EDT [89726] ERROR:  relation "users" already exists
+2018-06-01 21:08:23.511 EDT [89726] STATEMENT:  create table "users" ("id" serial primary key, "username" varchar(255) not null, "password" varchar(255) not null, "admin" boolean not null default '0', "created_at" timestamptz not null default now())
+2018-06-01 21:08:23.517 EDT [89726] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2018-06-01 21:08:23.517 EDT [89726] STATEMENT:  update "knex_migrations_lock" set "is_locked" = $1
+2018-06-01 21:09:08.381 EDT [89732] ERROR:  syntax error at or near "users" at character 8
+2018-06-01 21:09:08.381 EDT [89732] STATEMENT:  DELETE users;
+2018-06-02 15:18:39.577 EDT [57286] LOG:  received smart shutdown request
+2018-06-02 15:18:39.582 EDT [57286] LOG:  worker process: logical replication launcher (PID 57293) exited with exit code 1
+2018-06-02 15:18:39.582 EDT [57288] LOG:  shutting down
+2018-06-02 15:18:39.652 EDT [57286] LOG:  database system is shut down
