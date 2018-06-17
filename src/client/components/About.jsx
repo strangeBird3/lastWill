@@ -30,7 +30,7 @@ class About extends React.PureComponent {
 			</div>
 			<div className="pure-u-1 pure-u-md-1-3 major">
 				<div className="majorFirst">
-					<h2> Major Major <br /> Edwin "E Rod" Rodriguez </h2>
+					<h2> Major <br /> Edwin "E Rod" Rodriguez </h2>
 					<img className="pure-img-responsive" src={majorPic} alt="Major Major Edwin E. Rod Rodriguez" />
 					<p>Beloved Son, Brother, Husband, Father, Mentor and friend to all.</p>
 					<p>1972-2016. Rest in Peace</p>
