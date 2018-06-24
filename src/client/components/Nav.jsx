@@ -7,48 +7,62 @@ import logo from '../public/img/safe-locker.svg';
 class Nav extends React.PureComponent {
   constructor(props){
     super(props);
-    this.toggle = this.toggle.bind(this);
+  this.toggle = this.toggle.bind(this);
+  this.WINDOW_CHANGE_EVENT = this.WINDOW_CHANGE_EVENT.bind(this);
+	this.closeMenu = this.closeMenu.bind(this);
+	this.toggleHorizontal = this.toggleHorizontal.bind(this);
   }
 
-  toggle(e)  {
-    e.preventDefault()
+  componentDidMount() {
+    window.addEventListener('onorientationchange', this.WINDOW_CHANGE_EVENT)
+  }
 
-    const menu = document.getElementById('menu')
-    //   WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize'
+  componentWillUnmount() {
+    window.removeEventListener('onorientationchange', this.WINDOW_CHANGE_EVENT)
+  }
 
-    const toggleHorizontal = () => {
+
+  closeMenu() {
+      if (menu.classList.contains('open')) {
+        toggleMenu()
+      }
+  }
+  
+  toggleHorizontal() {
       [].forEach.call(
         document.getElementById('menu').querySelectorAll('.custom-can-transform'),
         function(el){
           el.classList.toggle('pure-menu-horizontal');
         }
       );
-    }
+  }
 
-    const toggleMenu = () => {
+  toggleMenu() {
       if (menu.classList.contains('open')) {
-        setTimeout(toggleHorizontal, 500);
+        setTimeout(this.toggleHorizontal, 500);
       }
       else (
-        toggleHorizontal()
+        this.toggleHorizontal
       )
       menu.classList.toggle('open');
       document.getElementById('toggle').classList.toggle('x');
     }
-
-    const closeMenu = () => {
-      if (menu.classList.contains('open')) {
-        toggleMenu()
-      }
-    }
-
-  /*document.getElementById('toggle').addEventListener('click', function (e) {
-    toggleMenu()
+  
+  toggle(e)  {
     e.preventDefault()
-  }) */
 
-   // window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu())
+    var menu = document.getElementById('menu')
+    
+	this.toggleMenu
+    
   }
+  
+  WINDOW_CHANGE_EVENT(e) {
+    return ('onorientationchange' in window) ? 'orientationchange':'resize';
+    this.closeMenu()
+  } 
+
+  
   
   render() {
 		return(
