@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import styles from '../public/index.sass';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Home extends React.PureComponent {
+	constructor(props) {
+	    super(props);
+
+	    this.getRequest = this.getRequest.bind(this);
+  	}
+
+  	getRequest() {
+  		axios.get('/auth/register')
+  			.then(function(response) {
+  				console.log(response);
+  			})
+  			.catch(function(error) {
+  				console.log(error);
+  			});
+  	}
+
 	render() {
 		return(
 		<div className="home">
@@ -53,6 +70,10 @@ class Home extends React.PureComponent {
 					<Link to="/Privacy" className="pure-menu-link">Learn More</Link>
 				</div>
 			</div>
+
+			<button className="benjaminbutton" onClick={this.getRequest}>
+				Get Request for auth/register
+			</button>
 		</div>
 		  
 		);

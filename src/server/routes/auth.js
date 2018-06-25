@@ -4,6 +4,10 @@ const router = express.Router();
 const authHelpers = require('../auth/_helpers');
 const passport = require('../auth/local');
 
+router.get('/register', () => {
+	console.log('reaching this code man');
+})
+
 router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {
   return authHelpers.createUser(req, res)
   .then((response) => {
