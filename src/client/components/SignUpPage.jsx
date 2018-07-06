@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import SignUpForm from './SignUpForm.jsx';
 import {Redirect} from 'react-router-dom';
+import axios from 'axios';
 
 class SignUpPage extends React.Component {
 
@@ -16,7 +17,6 @@ class SignUpPage extends React.Component {
       errors: {},
       user: {
         email: '',
-        name: '',
         password: ''
       }
     };
@@ -46,25 +46,39 @@ class SignUpPage extends React.Component {
    * @param {object} event - the JavaScript event object
    */
   processForm(event) {
-    // prevent default action. in this case, action is the form submission event
     event.preventDefault();
 
     // create a string for an HTTP body message
-    const name = this.state.user.name;
     const email = this.state.user.email;
     const password = this.state.user.password;
-    const formData = JSON.stringify({
-      "name": name,
+    const formData = {
       "email": email,
       "password": password
-    });
+    };
+    const data = JSON.stringify({
+      email: this.state.user.email,
+      password: this.state.user.password
+    })
 
-    // create an AJAX request
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'auth/register');
-    xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.responseType = 'json';
-    xhr.addEventListener('load', () => {
+
+    axios.post('auth/register', data, {
+      headers: {'Content-Type': 'application/json'}
+    })
+      .then(function(response){
+        console.log(response.data);
+        console.log(response.status);
+        console.log(response.statusText);
+        console.log(response.headers);
+        console.log(response.config);
+        console.log('success');
+      })
+      .catch(function(error){
+        console.log('FAIL');
+        console.log(error);
+      });
+  }
+
+  /*  xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         // success
 
@@ -88,8 +102,7 @@ class SignUpPage extends React.Component {
         });
       }
     });
-    xhr.send(formData);
-  }
+*/
 
   /**
    * Render the component.
@@ -115,7 +128,6 @@ class SignUpPage extends React.Component {
       </div>
     );
   }
-
 }
 
 export default SignUpPage;

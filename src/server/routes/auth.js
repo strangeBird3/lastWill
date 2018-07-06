@@ -4,18 +4,16 @@ const router = express.Router();
 const authHelpers = require('../auth/_helpers');
 const passport = require('../auth/local');
 
-router.get('/register', () => {
-	console.log('reaching this code man');
-})
-
 router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {
   return authHelpers.createUser(req, res)
-  .then((response) => {
+  .then((user) => {
     passport.authenticate('local', (err, user, info) => {
       if (user) { handleResponse(res, 200, 'success'); }
     })(req, res, next);
   })
-  .catch((err) => { handleResponse(res, 500, 'error'); });
+  .catch((err) => { 
+    handleResponse(res, 500, 'error'); 
+  });
 });
 
 router.post('/login', authHelpers.loginRedirect, (req, res, next) => {

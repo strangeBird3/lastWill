@@ -7,10 +7,10 @@ import logo from '../public/img/safe-locker.svg';
 class Nav extends React.PureComponent {
   constructor(props){
     super(props);
-  this.toggle = this.toggle.bind(this);
-  this.WINDOW_CHANGE_EVENT = this.WINDOW_CHANGE_EVENT.bind(this);
-	this.closeMenu = this.closeMenu.bind(this);
-	this.toggleHorizontal = this.toggleHorizontal.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.WINDOW_CHANGE_EVENT = this.WINDOW_CHANGE_EVENT.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.toggleHorizontal = this.toggleHorizontal.bind(this);
   }
 
   componentDidMount() {
@@ -53,13 +53,13 @@ class Nav extends React.PureComponent {
 
     var menu = document.getElementById('menu')
     
-	this.toggleMenu
+	  this.toggleMenu
     
   }
   
   WINDOW_CHANGE_EVENT(e) {
     return ('onorientationchange' in window) ? 'orientationchange':'resize';
-    this.closeMenu()
+    //this.closeMenu()
   } 
 
   

@@ -13,7 +13,7 @@ passport.use(new LocalStrategy({usernameField: 'email',
 								                passwordField: 'password'
 			}, (username, password, done) => {
       // check to see if the username exists
-      knex('users').where({ username }).first()
+      knex('users').where('email', email).first()
       .then((user) => {
         if (!user) return done(null, false);
         if (!authHelpers.comparePass(password, user.password)) {
@@ -22,7 +22,10 @@ passport.use(new LocalStrategy({usernameField: 'email',
           return done(null, user);
         }
       })
-      .catch((err) => { return done(err); });
+      .catch((err) => { 
+        console.log('i am an error beep boop');
+        return done(err); });
 }));
 
 module.exports = passport;
+ 

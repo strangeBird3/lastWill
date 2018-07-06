@@ -6,18 +6,21 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function createUser(req, res) {
+  console.log(req.body.password)
   return handleErrors(req)
   .then(() => {
     const salt = bcrypt.genSaltSync();
     const hash = bcrypt.hashSync(req.body.password, salt);
+    console.log(hash);
     return knex('users')
     .insert({
-      username: req.body.username,
+      email: req.body.email,
       password: hash
-    })
-    .returning('username', 'password');
+  })
+    .returning('*');
   })
   .catch((err) => {
+    console.log('this happened...');
     res.status(400).json({status: err.message});
   });
 }
@@ -47,7 +50,7 @@ function loginRedirect(req, res, next) {
 
 function handleErrors(req) {
   return new Promise((resolve, reject) => {
-    if (req.body.username.length < 6) {
+    if (req.body.email.length < 6) {
       reject({
         message: 'Username must be longer than 6 characters'
       });
