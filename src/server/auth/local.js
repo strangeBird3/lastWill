@@ -10,10 +10,10 @@ const options = {};
 init();
 
 passport.use(new LocalStrategy({usernameField: 'email',
-								                passwordField: 'password'
+								passwordField: 'password'
 			}, (username, password, done) => {
       // check to see if the username exists
-      knex('users').where('email', email).first()
+      knex('users').where({email: username}).first()
       .then((user) => {
         if (!user) return done(null, false);
         if (!authHelpers.comparePass(password, user.password)) {

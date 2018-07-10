@@ -1,49 +1,53 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom'
+import { Card, CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
-
-
-const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
-  <div className="cardContainer">
+const LoginForm = ({
+  onSubmit,
+  onChange,
+  errors,
+  successMessage,
+  user,
+  toggleAuthenticateStatus
+}) => (
+  <Card className="loginForm container">
     <form action="/" onSubmit={onSubmit}>
-      <h2 className="card-heading">Login</h2> 
+      <h2 className="card-heading">Login</h2>
 
       {successMessage && <p className="success-message">{successMessage}</p>}
       {errors.summary && <p className="error-message">{errors.summary}</p>}
 
       <div className="field-line">
-        <input className="TextField"
+        <TextField
           floatingLabelText="Email"
           name="email"
           errorText={errors.email}
           onChange={onChange}
-          value={user.email}>
-        </input>
+          value={user.email}
+        />
       </div>
 
       <div className="field-line">
-        <input className="TextField"
+        <TextField
           floatingLabelText="Password"
           type="password"
           name="password"
           onChange={onChange}
           errorText={errors.password}
-          value={user.password}>
-        </input>
+          value={user.password}
+        />
       </div>
 
       <div className="button-line">
-        <div className="pure-button RaisedButton" 
-        type="submit" label="Log in" primary >
-        </div>
+        <RaisedButton type="submit" label="Log in" primary />
       </div>
 
-      <div className="CardText"><h2>Don't have an account? <Link to={'/register'}>Create one</Link>.</h2></div>
+      <CardText>Don't have an account? <Link to={'/register'}>Create one</Link>.</CardText>
     </form>
-  </div>
+  </Card>
 );
 
 LoginForm.propTypes = {
@@ -53,5 +57,6 @@ LoginForm.propTypes = {
   successMessage: PropTypes.string.isRequired,
   user: PropTypes.object.isRequired
 };
+
 
 export default LoginForm;

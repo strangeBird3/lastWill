@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import SignUpForm from './SignUpForm.jsx';
+import SignUpForm from '../components/SignUpForm.jsx';
 import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ class SignUpPage extends React.Component {
   constructor(props) {
     super(props);
 
-    // set the initial component state
+    // set the initial `component state
     this.state = {
       redirect: false,
       errors: {},

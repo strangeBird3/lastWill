@@ -7,18 +7,8 @@ class Home extends React.PureComponent {
 	constructor(props) {
 	    super(props);
 
-	    this.getRequest = this.getRequest.bind(this);
   	}
 
-  	getRequest() {
-  		axios.get('/auth/register')
-  			.then(function(response) {
-  				console.log(response);
-  			})
-  			.catch(function(error) {
-  				console.log(error);
-  			});
-  	}
 
 	render() {
 		return(
@@ -27,7 +17,7 @@ class Home extends React.PureComponent {
 				<div className="pure-u-1 pure-u-md-1-5"></div>
 				<div className="pure-u-1 pure-u-md-3-5">
 					<div className="landingText">
-						<h1>This Should Help</h1>
+						<h2>This Should Help</h2>
 						<h3>This could be the most important piece of mind you can give to your family</h3>
 					</div>
 				</div>
@@ -70,10 +60,6 @@ class Home extends React.PureComponent {
 					<Link to="/Privacy" className="pure-menu-link">Learn More</Link>
 				</div>
 			</div>
-
-			<button className="benjaminbutton" onClick={this.getRequest}>
-				Get Request for auth/register
-			</button>
 		</div>
 		  
 		);

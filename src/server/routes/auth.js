@@ -24,6 +24,7 @@ router.post('/login', authHelpers.loginRedirect, (req, res, next) => {
       req.logIn(user, function (err) {
         if (err) { handleResponse(res, 500, 'error'); }
         handleResponse(res, 200, 'success');
+		return res.redirect('/users/' + user.username);
       });
     }
   })(req, res, next);

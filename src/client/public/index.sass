@@ -1,4 +1,4 @@
-$font-stack: Courier New, sans-serif;
+$font-stack: PT Mono, sans-serif;
 $font-color: #366cd0;
 $primary-color: white;
 $grey-color: #777; // grey
@@ -8,7 +8,7 @@ $grey-color: #777; // grey
 
 .landing
 
-	background-image: url(./img/nature_field.jpg);
+	background-image: url(./img/sunset1.jpg);
 	height: 18em;
 	background-size: cover;
 
@@ -18,13 +18,16 @@ $grey-color: #777; // grey
 		margin-top: 5em;
 		margin-left: 6em;
 
-	color: $font-color;
-	margin-top: 2em;
-	margin-left: 6em;
+	color: #d1e8ec;
+	margin-top: 7em;
+	margin-left: 1em;
+	margin-right: 1em;
+	background-color: #00000080;
+	font-family: PT;
 
 
 
-	h1
+	h2
 		font-family: $font-stack;
 
 .homeContent
@@ -126,7 +129,7 @@ $grey-color: #777; // grey
 
 // What to do? page
 .whatContent
-	margin-top: 2em;
+	margin-top: 0em;
 	text-align: justify;
 	line-height: 22px;
 
@@ -290,99 +293,84 @@ $grey-color: #777; // grey
     p
     	font-size: .5em;
 
-    h4
-    
 
 .priceSubtext
 
-// PureCSS menu template + Nav menu
+// NAV MENU
 
-.custom-brand
-	img
-		width: 1.5em;
+.mainNavmargin
+	padding-top: 6em;
 
-.pure-menu-list
-	font-family: $font-stack;
-	font-weight: bold;
+.HUD
+	background-color: white;
+	height: 3em;
 
-.custom-wrapper
-	background-color: $primary-color;
-	margin-bottom: 1em;
-	-webkit-font-smoothing: antialiased;
-	height: 2.1em;
-	overflow: hidden;
-	-webkit-transition: height 0.5s;
-	-moz-transition: height 0.5s;
-	-ms-transition: height 0.5s;
-	transition: height 0.5s;
-          
-
-.custom-wrapper.open 
-	height: 14em;
-      
-      
-.custom-menu-3 
-	text-align: right;
+logoutBtn 
+	position: fixed;
+	top: 1em;
+	right: 1em;
+/* Position and sizing of burger button */
+.bm-burger-button 
+  position: fixed;
+  width: 24px;
+  height: 18px;
+  left: 30px;
+  top: 30px;
 
 
-.custom-toggle 
-	width: 34px;
-	height: 34px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: none;
+/* Color/shape of burger icon bars */
+.bm-burger-bars 
+  background: #373a47;
 
 
-.custom-toggle .bar 
-	background-color: $grey-color;
-	display: block;
-	width: 20px;
-	height: 2px;
-	border-radius: 100px;
-	position: absolute;
-	top: 18px;
-	right: 7px;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	transition: all 0.5s;
+/* Position and sizing of clickable cross button */
+.bm-cross-button 
+  height: 24px;
+  width: 24px;
 
 
-.custom-toggle .bar:first-child 
-	-webkit-transform: translateY(-6px);
-	-moz-transform: translateY(-6px);
-	-ms-transform: translateY(-6px);
-	transform: translateY(-6px);
+/* Color/shape of close button cross */
+.bm-cross 
+  background: #bdc3c7;
 
 
-.custom-toggle.x .bar 
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
+/* General sidebar styles */
+.bm-menu 
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
 
 
-.custom-toggle.x .bar:first-child 
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape 
+  fill: #373a47;
 
 
-@media (max-width: 47.999em) 
+/* Wrapper for item list */
+.bm-item-list 
+  color: #b8b7ad;
+  padding: 0em;
 
-	.custom-menu-3 
-		text-align: left;
+
+/* Individual item */
+.bm-item 
+  display: inline-block;
 
 
-	.custom-toggle 
-		display: block;
+/* Styling of overlay */
+.bm-overlay 
+  background: rgba(0, 0, 0, 0.3);
 
 
 // Register
 .signupForm
 	text-align: center;
+	margin-top: 5em;
+
+// Login
+.loginForm
+	text-align: center;
+	margin-top: 5em;
 
 // Contact form
 
@@ -402,6 +390,15 @@ $grey-color: #777; // grey
 
 .button-success 
 	background: rgb(28, 184, 65);
+
+// USER's Home Page ****
+
+.homeUser
+	text-align: center;
+
+.introApp
+	margin: 0em 6em;
+	margin-top: 3em;
 
 
 
