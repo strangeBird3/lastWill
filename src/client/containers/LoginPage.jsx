@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import LoginForm from '../components/LoginForm.jsx';
-import Auth from '../modules/Auth.js';
 import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 
@@ -44,6 +43,8 @@ class LoginPage extends React.Component {
   processForm(event) {
     // prevent default action. in this case, action is the form submission event
     event.preventDefault();
+	
+	let currentComponent = this;
 
     // create a string for an HTTP body message
     const email = this.state.user.email;
@@ -52,36 +53,26 @@ class LoginPage extends React.Component {
 		email: this.state.user.email,
 		password: this.state.user.password
 	})
-
+	
     // create an AJAX request
 	axios.post('auth/login', formData, 
 	  {headers: {'Content-Type': 'application/json'}})
       .then(function(response){
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.statusText);
-        console.log(response.headers);
-        console.log(response.config);
-        console.log('success');
-        console.log(response.token);
-
+		console.log(response);
 		if (response.status === 200) {
 		  //change the component-container state
-		  this.setState({
+		  currentComponent.setState({
 		    errors: {}
 		  });
+		 
+		  // need to send session storage here
 		  
-		  // save the token
-		  Auth.authenticateUser(response.token);
+		  localStorage.setItem('username', response.config.data.email);
+		  currentComponent.setState({redirect: true}); 
 
-		  localStorage.setItem('username', JSON.stringify(response.user.email));
-		  console.log(JSON.parse(localStorage.getItem('username')).name); 
-
-		   this.setState({redirect: true}); 
-
-		   } else {
+	     } else {
 			// failure
-
+			console.log(response.message);
 			// change the component state
 		    const errors = response.errors ? response.errors : {};
 			errors.summary = response.message;
@@ -90,7 +81,7 @@ class LoginPage extends React.Component {
 				errors
 			})
 				
-			}	
+		}	
       })
       .catch(function(error){
         console.log('FAIL');
@@ -98,49 +89,6 @@ class LoginPage extends React.Component {
       });
   }	
 
-/*
-    xhr.addEventListener('load', () => {
-      if (xhr.status === 200) {
-        // success
-
-        // change the component-container state
-        this.setState({
-          errors: {}
-        });
-
-        // save the token
-        Auth.authenticateUser(xhr.response.token);
-
-
-        localStorage.setItem('usrname', JSON.stringify(xhr.response.user));
-        
-        console.log(JSON.parse(localStorage.getItem('usrname')).name);
-        // if(xhr.response.user)
-        // {
-        //   console.log(xhr.response.user);
-        // }
-        // else{
-        //   console.log('after signin no user returned');
-
-        // }
-        this.setState({redirect: true});
-        // change the current URL to /
-        // this.context.router.replace('/');
-      } else {
-        // failure
-
-        // change the component state
-        const errors = xhr.response.errors ? xhr.response.errors : {};
-        errors.summary = xhr.response.message;
-
-        this.setState({
-          errors
-        });
-      }
-    });
-    xhr.send(formData); 
-*/
-  
 
   /**
    * Change the user object.
@@ -162,20 +110,19 @@ class LoginPage extends React.Component {
    */
   render() {
     return (
-      // <div>
-      //   LoginPage
-      // </div> 
       <div>
-      {this.state.redirect == false? (   
-      <LoginForm
-        onSubmit={this.processForm}
-        onChange={this.changeUser}
-        errors={this.state.errors}
-        successMessage={this.state.successMessage}        
-        user={this.state.user}
-      />):(
-        <Redirect to='/' />
-        
+      {this.state.redirect == false ? 
+      (   
+        <LoginForm
+          onSubmit={this.processForm}
+          onChange={this.changeUser}
+          errors={this.state.errors}
+          successMessage={this.state.successMessage}        
+          user={this.state.user}
+        />
+      ) :
+      (
+        <Redirect to='/homeUser' />  
       )
       }
       </div>

@@ -26,6 +26,8 @@ class homeUser extends React.PureComponent {
         <h3 className="introApp"> Welcome to your home page. You can fill out or edit your forms 
         at any time and they will update once you hit Save button. Cheers
         </h3>
+
+		
       </div>
     );
   }

@@ -38,6 +38,7 @@ class Nav extends React.PureComponent {
 				<li className="menu4"><Link onClick={this.closeMenu} to="/about" className="pure-menu-link">About Us</Link></li>
 				<li className="menu5"><Link onClick={this.closeMenu} to="/pricing" className="pure-menu-link">Pricing/How It Works</Link></li>
 				<li className="menu6"><Link onClick={this.closeMenu} to="/register" className="pure-menu-link">Register</Link></li>
+				<li className="menu7"><Link onClick={this.closeMenu} to="/login" className="pure-menu-link">Login</Link></li>
 		</Menu>
 		  );
 	 }
